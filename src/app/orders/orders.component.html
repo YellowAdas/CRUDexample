@@ -1,0 +1,24 @@
+<form [formGroup]="this.ordersService.form" (ngSubmit)="onSubmit()">
+  <input
+    placeholder="Order Number"
+    formControlName="orderNumber"
+    type="text"
+    class="input-field col s12"
+  />
+  <input
+    placeholder="Customer Name"
+    formControlName="customerName"
+    type="text"
+    class="input-field col s12"
+  />
+  <button
+    class="waves-effect waves-light btn col s4"
+    *ngFor="let coffee of coffees"
+    click="addCoffee(coffee)"
+  >
+    {{ coffee }}
+  </button>
+  <button class="waves-effect waves-light btn col s12" click="onSubmit()">
+    Submit
+  </button>
+</form>
